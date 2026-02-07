@@ -1,3 +1,8 @@
+package com.example.taskflow.task.entity;
+
+import jakarta.persistence.*;
+import lombok.Data;
+
 @Entity
 @Data
 public class Task {
@@ -11,5 +16,6 @@ public class Task {
     private String status; // PENDING / COMPLETED
 
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 }
